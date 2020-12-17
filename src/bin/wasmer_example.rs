@@ -1,4 +1,4 @@
-//put me in src/bin/ and then run:   cargo run --bin wasmer_example
+// cargo run --bin wasmer_example
 
 use wasmer::{imports, Instance, Module, NativeFunc, Store};
 use wasmer_compiler_cranelift::Cranelift;

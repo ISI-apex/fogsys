@@ -1,4 +1,4 @@
-//put me in src/bin/ and then run:   cargo run --bin wasmtime_example
+//cargo run --bin wasmtime_example
 
 
 use anyhow::Result;
@@ -17,7 +17,7 @@ let wasm_bytes = include_bytes!("../wasm/fib.wasm");
     let module = Module::from_binary(store.engine(), swasm_bytes)?;
     let instance = Instance::new(&store, &module, &[])?;
 
-    // Invoke `gcd` export
+    // Invoke `func` export
     let func = instance
         .get_func("func")
         .ok_or(anyhow::format_err!("failed to find function export"))?
